@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAcK Competition: Manual and Autonomous Car</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="projects-style.css">
+</head>
+<body class="bg-light text-dark">
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h1 class="fw-bold">HAcK Competition: Manual and Autonomous Car</h1>
+            <p class="text-muted">Category: Front-End Project</p>
+            <button id="theme-toggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
+            <a href="/main.html" class="btn btn-primary">Back to Home Page</a>
+        </header>
+
+        <section class="mb-4">
+            <h2>Objective</h2>
+            <p>HAcK was a competition, for UCLA transfer students, where we had to make a car with autonomous and manual control in a time frame of 48 hours. There were three tiers in this challenge: Control the car using Bluetooth, IR controller and fully autonomously.</p>
+        </section>
+
+        <section class="mb-4">
+            <h2>Role</h2>
+            <ul>
+                <li> Collaborated in a team of 3 to assemble an autonomous car with unloading mechanism.</li>
+                <li> Utilized Solid works to make replica parts and FEA analysis feature to analyze some parts of the assembly of the robot car.</li>
+                <li> Programmed manual override, control car using Bluetooth module and Remote controller, using Python and C based coding.</li>
+                <li> Utilize ultrasonic sensor and Reflective IR sensor to help the robot car drive through mazes autonomously.</li>
+                <li> Built team website using CSS, Java Script, and Html, showcasing project overview and delivered a design review to a panel of judges.</li>
+            </ul>
+        </section>
+
+        <!-- Picture Section -->
+        <section class="mb-4">
+            <h2>Pictures</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/CAD Design.png" class="img-fluid rounded shadow zoomable" alt="Example Image 1">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Electrocardiogram HousingFront.png" class="img-fluid rounded shadow zoomable" alt="Example Image 2">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Electrocardiogram HousingSide.png" class="img-fluid rounded shadow zoomable" alt="Example Image 3">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/3L13fGZZM7I?si=_BJ7uWukNL483MRD" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/8PvHn9H_Th4?si=q3aOR_Znc9Dd3dTe" title="YouTube Video 2" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div> 
+
+        <footer class="text-center mt-5">
+            <p>&copy; 2023 Warnakulasuriya Fernando. All rights reserved. | <a href="/main.html" class="text-primary">Back to Home Page</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="project_script.js"></script>
+    <script>
+        // Dark/Light Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', function() {{
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-light');
+            document.body.classList.toggle('bg-light');
+            document.body.classList.toggle('text-dark');
+        }});
+    </script>
+</body>
+</html>

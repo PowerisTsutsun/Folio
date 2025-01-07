@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrocardiogram</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="projects-style.css">
+</head>
+<body class="bg-light text-dark">
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h1 class="fw-bold">Electrocardiogram</h1>
+            <p class="text-muted">Category: Back-End Project</p>
+            <button id="theme-toggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
+            <a href="/main.html" class="btn btn-primary">Back to Home Page</a>
+        </header>
+
+        <section class="mb-4">
+            <h2>Objective</h2>
+            <p>Use concepts and techniques in electrical circuit design and analysis, cardiac electrophysiology, biophysics, microcontrollers, and computer programming to design, construct, and test circuit boards capable of measuring human electrocardiograms. Capture electrocardiogram data with microcontroller, with computer analysis and display.</p>
+        </section>
+
+        <section class="mb-4">
+            <h2>Role</h2>
+            <ul>
+                <li>Designed a single layer PCB using Eagle. </li>
+                <li>Soldered through hole connections to PCB to connect two LCDs, Wi-Fi module and power source to make a compact self-sufficient ECG.</li>
+                <li>Utilized SolidWorks software to design casing for ECG and developed those designs using 3D printing and laser cutting.</li>
+                <li>Programmed LCDs, to display heart signals, heartbeat, and battery percentage (custom characters), and Wi-Fi module to transfer data to a database.</li>
+                <li>Presented the project to a panel of judges to review based on functionality and won the best overall project in the class.</li>
+            </ul>
+        </section>
+
+        <!-- Picture Section -->
+        <section class="mb-4">
+            <h2>Pictures</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/PCB Design.png" class="img-fluid rounded shadow zoomable" alt="Example Image 1">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Electrocardiogram Housing Side.png" class="img-fluid rounded shadow zoomable" alt="Example Image 2">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Electrocardiogram HousingFront.png" class="img-fluid rounded shadow zoomable" alt="Example Image 3">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/Yv0Ds5p7LYg?si=kGoZGrtS-jn00Q6p" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/Zxc6ROLk2cM?si=qxEPg5zIl5YtZMH1" title="YouTube Video 2" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/aHW3AusMeDM?si=qJ2EsjLfb8Jzwca5" title="YouTube Video 3" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+
+        <footer class="text-center mt-5">
+            <p>&copy; 2023 Warnakulasuriya Fernando. All rights reserved. | <a href="/main.html" class="text-primary">Back to Home Page</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="project_script.js"></script>
+    <script>
+        // Dark/Light Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', function() {{
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-light');
+            document.body.classList.toggle('bg-light');
+            document.body.classList.toggle('text-dark');
+        }});
+    </script>
+</body>
+</html>

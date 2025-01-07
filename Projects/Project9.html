@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foray: Manual and Autonomous Blimp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="projects-style.css">
+</head>
+<body class="bg-light text-dark">
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h1 class="fw-bold">Foray: Manual and Autonomous Blimp</h1>
+            <p class="text-muted">Category: Front-End</p>
+            <button id="theme-toggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
+            <a href="/main.html" class="btn btn-primary">Back to Home Page</a>
+        </header>
+
+        <section class="mb-4">
+            <h2>Objective</h2>
+            <p>FORAY is a project at UCLA LEMUR, a research lab, that involves the programming and manufacturing of Lighter-than-Air (LTA) robots like blimp. The goal of this project, in collaboration with the government, is to discover the most efficient way to control and to solve pragmatic problems involving these LTAs by placing LTA robots in a competition where they would catch green balls and shoot them to a goal.</p>
+        </section>
+
+        <section class="mb-4">
+            <h2>Role</h2>
+            <ul>
+                <li>Researched effective ways and created algorithms to make the LTA robot hover in front of a green ball with the use of vision processing and PID control.</li>
+                <li>Programmed the LTA robots be controlled through manual and autonomous control with the help of PyGame.</li>
+                <li>Found the best camera that enables the blimp to hover in front of the green ball efficiently (cameras used include OpenMV, ESP32 cam, and Nicla Vision).</li>   
+                <li>Performed unit tests for the whole LTA robot system. </li>
+                <li>Created the project’s modularized source code version for easy debugging. </li>
+                <li>Prototyped many iterations of mechanical parts using Solid works to design, 3D prints to assemble mechanisms for an autonomous blimp. </li>
+                <li>In charge of wiring and soldering hardware components. </li>
+            </ul>
+        </section>
+
+        <!-- Picture Section -->
+        <section class="mb-4">
+            <h2>Pictures</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Blimp with the capturing mechanism.png" class="img-fluid rounded shadow" alt="Example Image 1">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Motor Holder.png" class="img-fluid rounded shadow zoomable" alt="Example Image 2">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Camera Holder.png" class="img-fluid rounded shadow zoomable" alt="Example Image 3">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Camera Holder1.png" class="img-fluid rounded shadow zoomable" alt="Example Image 3">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/hYQEG7fZWvM?si=JkZgnFrEBqy3bTpN" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/CGRhT1U7Ahw?si=m2AMmAxb1wbOqlJG" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/PkY8R_U4FG4?si=HeweJ30cg1t0rev1" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/0T440hIb_TY?si=8Zkd8Yj_9c3N25B1" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/lG5X5pIUnPE?si=s-3pjuak6fnbQ4V4" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/MbEUKq2Ht7g?si=lqh8bUgOI2QaBItv" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div> 
+
+        <footer class="text-center mt-5">
+            <p>&copy; 2023 Warnakulasuriya Fernando. All rights reserved. | <a href="/main.html" class="text-primary">Back to Home Page</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="project_script.js"></script>
+    <script>
+        // Dark/Light Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', function() {{
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-light');
+            document.body.classList.toggle('bg-light');
+            document.body.classList.toggle('text-dark');
+        }});
+    </script>
+</body>
+</html>

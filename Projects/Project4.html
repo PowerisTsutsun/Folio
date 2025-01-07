@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Effective 3D Modeling using Point Cloud Data from Azure Kinect SDK RGB-D Sensors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="projects-style.css">
+</head>
+<body class="bg-light text-dark">
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h1 class="fw-bold">Cost Effective 3D Modeling using Point Cloud Data from Azure Kinect SDK RGB-D Sensors</h1>
+            <p class="text-muted">Category: Back-End Project</p>
+            <button id="theme-toggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
+            <a href="/main.html" class="btn btn-primary">Back to Home Page</a>
+        </header>
+
+        <section class="mb-4">
+            <h2>Objective</h2>
+            <p>Create a cost-effective way to reconstruct three dimensional objects using Azure Kinetic RGB-D sensor data and Open3d library.</p>
+        </section>
+
+        <section class="mb-4">
+            <h2>Role</h2>
+            <ul>
+                <li>Found a most effective method to reconstruct a three-dimensional scenery using RGB-D sensors, Python and Open3D Library.  </li>
+                <li>Identified and resolved existing errors in the Open 3D library and python interface. </li>
+                <li>Experimented different approaches and functionalities existing in the Open3D library to perfect a object or scenery and reduce the processing time.  </li>
+            </ul>
+        </section>
+
+        <!-- Picture Section -->
+        <section class="mb-4">
+            <h2>Pictures</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Mesh Models.png" class="img-fluid rounded shadow zoomable" alt="Example Image 1">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Mesh Models1.png" class="img-fluid rounded shadow zoomable" alt="Example Image 2">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/mesh3.png" class="img-fluid rounded shadow zoomable" alt="Example Image 3">
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+
+
+        <footer class="text-center mt-5">
+            <p>&copy; 2023 Warnakulasuriya Fernando. All rights reserved. | <a href="/main.html" class="text-primary">Back to Home Page</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="project_script.js"></script>
+
+    <script>
+        // Dark/Light Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', function() {{
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-light');
+            document.body.classList.toggle('bg-light');
+            document.body.classList.toggle('text-dark');
+        }});
+    </script>
+</body>
+</html>

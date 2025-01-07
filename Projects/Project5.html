@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmable Robotic Car</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="projects-style.css">
+</head>
+<body class="bg-light text-dark">
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h1 class="fw-bold">Programmable Robotic Car</h1>
+            <p class="text-muted">Category: Back-End Project</p>
+            <button id="theme-toggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
+            <a href="/main.html" class="btn btn-primary">Back to Home Page</a>
+        </header>
+
+        <section class="mb-4">
+            <h2>Objective</h2>
+            <p>Use concepts like PID, unit testing and hardware debugging to program the car to navigate through a track following the black center line.</p>
+        </section>
+
+        <section class="mb-4">
+            <h2>Role</h2>
+            <ul>
+                <li> Calibrated eight sensors and processed those sensor data values to find optimal proportional component (Kd), derivative component (Kp) and speed for better steering through the track.</li>
+                <li> Coded the car to follow a track using C based programming.</li>
+            </ul>
+        </section>
+
+        <!-- Picture Section -->
+        <section class="mb-4">
+            <h2>Pictures</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Programmable Car.png" class="img-fluid rounded shadow zoomable" alt="Example Image 1">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/Programmable Car in starting position.png" class="img-fluid rounded shadow zoomable" alt="Example Image 2">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/wRxNcp-DHFI?si=63FXs1j_nBFR6fkX" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/hjfLRNsFA5w?si=oGVc6_rYaqevr6O" title="YouTube Video 2" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>  
+
+        <footer class="text-center mt-5">
+            <p>&copy; 2023 Warnakulasuriya Fernando. All rights reserved. | <a href="/main.html" class="text-primary">Back to Home Page</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="project_script.js"></script>
+    <script>
+        // Dark/Light Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', function() {{
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-light');
+            document.body.classList.toggle('bg-light');
+            document.body.classList.toggle('text-dark');
+        }});
+    </script>
+</body>
+</html>

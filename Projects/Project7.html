@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE:IDEA Hacks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="projects-style.css">
+</head>
+<body class="bg-light text-dark">
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h1 class="fw-bold">IEEE:IDEA Hacks</h1>
+            <p class="text-muted">Category: Front-End Project</p>
+            <button id="theme-toggle" class="btn btn-outline-secondary">Toggle Dark Mode</button>
+            <a href="/main.html" class="btn btn-primary">Back to Home Page</a>
+        </header>
+
+        <section class="mb-4">
+            <h2>Objective</h2>
+            <p>The UCLA Idea Hack was a 36 hour event where groups of up to 5 people created a product that pertained to various event categories. My group of 5 designed Roshambot, an interactive AI agent with a Robotic to play Rock-Paper-Scissors to win a reward at the end. Over the course of a short 36 hours we managed to iterate through multiple mechanical designs, plan an electrical system, and code and integrate all components to create a cohesive product. And we got 3rd place overall out of 70 teams.</p>
+        </section>
+
+        <section class="mb-4">
+            <h2>Role</h2>
+            <ul>
+                <li>Coded machine vision algorithm and AI algorithm using OpenCV, python, and C++.</li>
+                <li>In charge of hardware components, wiring and powering the system.</li>
+            </ul>
+        </section>
+
+        <!-- Picture Section -->
+        <section class="mb-4">
+            <h2>Pictures</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="/assets/IEEEIDEAHacks12.png" class="img-fluid rounded shadow zoomable" alt="Example Image 1">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/-bbxaeTMqvo" title="YouTube Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/u04hrDF4pKY?si=iYfRhnq8yanbAnVh" title="YouTube Video 2" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <iframe class="embed-responsive-item rounded shadow" width="100%" height="200" src="https://www.youtube.com/embed/y8vE9_Ae4HI" title="YouTube Video 2" allowfullscreen></iframe>
+                </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div> 
+
+        <footer class="text-center mt-5">
+            <p>&copy; 2023 Warnakulasuriya Fernando. All rights reserved. | <a href="/main.html" class="text-primary">Back to Home Page</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="project_script.js"></script>
+    <script>
+        // Dark/Light Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', function() {{
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-light');
+            document.body.classList.toggle('bg-light');
+            document.body.classList.toggle('text-dark');
+        }});
+    </script>
+</body>
+</html>

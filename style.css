@@ -1,735 +1,405 @@
 /* ==================================================================
-  CSS Boilerplate
+   BASE RESET & GLOBAL STYLES
 ================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
 
-/** -----------------------------------------------------------------
-  * SECTION TOKENS
-  * font: font-style font-variant font-weight font-size/line-height font-family; }
------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
 
-/* Base Settings */
 :root {
-  --font-body: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Roboto', sans-serif;
   --text-color: #2D2F34;
-  --page-background: white;
-  --link-color: #0074E0;
-  --content-width: auto;
-  --flow-space: 20px;
-  --gutter: 10px;
-
-  /* Optional heading color (used in headings) */
   --heading-color: #222;
+  --page-background: #fff;
+  
+  /* Flow spacing for section separation */
 
   /* Accent color for focus outline */
   --color-accent: #1161ed;
 
   /* Example typography scale (optional usage in headings below) */
-  --typeset_-1: 0.875rem/1.3rem var(--font-body);
   --typeset_0: 1rem/1.5rem var(--font-body);
-  --typeset_1: 1.25rem/1.6rem var(--font-body);
-  --typeset_2: 1.5rem/1.8rem var(--font-body);
-  --typeset_3: 1.75rem/1.9rem var(--font-body);
-  --typeset_4: 2rem/2.2rem var(--font-body);
+  --typeset_1: 1.25rem/1.5rem var(--font-body);
+  --typeset_2: 1.5rem/1.5rem var(--font-body);
+  --typeset_3: 1.75rem/1.5rem var(--font-body);
+  --typeset_4: 2rem/1.5rem var(--font-body);
 }
 
-/* Box Sizing */
-*,
-*::before,
-* {
-  -webkit-font-smoothing: antialiased;
-}
-  
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, output, ruby, section, summary,
-time, mark, audio, video {
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-  font-family: 'Roboto', sans-serif;
-  color: #333; /* Standard text color for better readability */
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav {
-  display: block;
-}
-
+/* Body defaults */
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 20px;
+  font-family: var(--font-body);
+  color: var(--text-color);
   background: var(--page-background);
+  line-height: 1.5;
 }
 
-ol, ul {
+/* Remove default bullet styling from all unordered lists */
+ul {
   list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/** -----------------------------------------------------------------
-  * SECTION CORE
------------------------------------------------------------------- */
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-/* Visually Hidden Utility */
-.visually-hidden:not(:focus):not(:active),
-.sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-/* Hidden attribute */
-[hidden] {
-  display: none !important;
-}
-
-/* Disabled elements */
-[disabled] {
-  pointer-events: none !important;
-  cursor: not-allowed !important;
+  padding-left: 0;
 }
 
 /* Focus outline */
 :focus-visible {
-  outline-color: var(--color-accent);
-  outline-offset: 3px;
-  outline-width: 2px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
-/* Scroll margin */
-* {
-  scroll-margin-top: var(--flow-space);
-  scroll-margin-bottom: var(--flow-space);
+/* Container that wraps each major section, controlling max-width & spacing */
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px; /* Add left/right padding + top/bottom space */
 }
 
-/** -----------------------------------------------------------------
-  * SECTION TYPOGRAPHY
------------------------------------------------------------------- */
-
-/* Flow spacing for typography elements */
-h1, h2, h3, h4, h5, h6, p,
-label, legend, address {
-  margin-block-end: var(--flow-space);
-}
-
-/* Double flow spacing before headings & set heading color. */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
-  margin-block-start: calc(var(--flow-space) * 2);
+  margin-bottom: 20px;
 }
 
-/* Decrease space between sequential headings */
-h2 + h3,
-h3 + h4,
-h4 + h5,
-h5 + h6 {
-  margin-block-start: 0;
-}
-
-/* Heading typography */
-h1, .txt-h1 {
+h1 {
   font: var(--typeset_4);
   font-weight: 800;
-  letter-spacing: -0.01em;
-  margin-block-start: 0;
 }
-h2, .txt-h2 {
+h2 {
   font: var(--typeset_3);
   font-weight: 600;
-  letter-spacing: -0.01em;
 }
-h3, .txt-h3 {
+h3 {
   font: var(--typeset_2);
   font-weight: 600;
-  letter-spacing: -0.01em;
 }
-h4, .txt-h4 {
+h4 {
   font: var(--typeset_1);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-h5, .txt-h5, h6, .txt-h6, label, th, legend {
-  font: var(--typeset_0);
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* Center utility */
-.center {
-  display: grid;
-  place-items: center;
-}
-
-@media (min-width: 25em) {
-  .grid {
-    --grid-gap: var(--gutter);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-    gap: var(--grid-gap);
-  }
-}
-
-@media (orientation: portrait) and (min-width: 25em) {
-  .grid-portrait {
-    --grid-gap: var(--gutter);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-    gap: var(--grid-gap);
-  }
-}
-
-@media (orientation: landscape) and (min-width: 25em) {
-  .grid-landscape {
-    --grid-gap: var(--gutter);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-    gap: var(--grid-gap);
-  }
-}
-
-/* EMOJI STYLING AND ANIMATION */
-
-.emoji {
-  font-size: calc(2vw + 1px); /* Responsive font size */
-  margin-left: 0.5em; /* Space between text and emoji */
-  display: inline-block; /* Ensures inline display with animation */
-}
-.emoji::after {
-  content: '✋'; /* Initial content - can be adjusted or animated */
-  animation: wave-animation 1s infinite linear;
-}
-@keyframes wave-animation {
-  0%, 100% {
-    content: '✋';
-  }
-  50% {
-    content: '👋';
-  }
-}
-@media (max-width: 600px) {
-  .emoji {
-    font-size: calc(5vw + 5px); /* Slightly larger for better visibility on smaller screens */
-  }
-}
-
-/* Ensure the image fills the container */
-.content-container {
-  max-width: 600px; /* Set the maximum width of the container */
-  margin: 0 auto; /* Center the container horizontally */
-}
-.content-container1 {
-  max-width: 600px; /* Set the maximum width of the container */
-  margin: 0 auto; /* Center the container horizontally */
-}
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  margin-bottom: -20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.container1 {
-  max-width: 550px;
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.container2 {
-  max-width: 700px;
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.container3 {
-  max-width: 350px;
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#projects {
-  font-size: 16px; /* Default font size for larger screens */
-}
-@media (max-width: 768px) {
-  #projects {
-    font-size: 14px; /* Smaller font size for mobile screens */
-  }
-}
-
-.image-container {
-  float: left; /* Float the image to the left */
-  margin-right: 40px; /* Add some margin to create space between image and text */
-  margin-top: 40px;
-}
-
-/* Clear the float to prevent layout issues */
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-  margin-bottom: -20px;
-}
-
-.float-left {
-  float: left; /* Float the image to the left */
-  margin-right: 40px; /* Add margin to the right for spacing */
-}
-
-.paragraph {
-  margin-top: 0; /* Remove default top margin */
-  margin-top: 30px;
-}
-
-/* NAV BAR */
-
-#navbar {
-  background-color: #333;
-  overflow: auto;
-}
-
-.navbar {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center; /* Center items for better mobile appearance */
-  flex-wrap: wrap; /* Allow items to wrap */
-}
-
-.navbar li a {
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 1rem; 
-  transition: background-color 0.3s ease; /* color or background, not size */
-}
-.navbar li a.active,
-.navbar li a:hover {
-  /* Keep the same font-size so it doesn't grow/shrink */
-  font-size: 1rem; 
-  /* Maybe only change color or background, not the size */
-  background-color: #444;
-}
-
-.navbar li.control a {
-  background: #1161ed; /* Highlight control buttons */
-}
-
-/* Ensure control buttons are visible on mobile */
-.navbar li.control {
-  display: block;
-  width: 100%; /* Full width for easier touch */
-}
-
-@media (min-width: 768px) {
-  .navbar {
-    justify-content: space-between;
-  }
-  .navbar li:not(.control) {
-    display: block; /* Show all items on larger screens */
-  }
-  .navbar li {
-    flex: 1;
-  }
-  .navbar li.control {
-    width: auto; /* Adjust width for desktop view */
-  }
-  .navbar li.control a {
-    background: transparent;
-  }
-}
-
-@media (min-width: 768px) {
-  :root {
-    /* Larger base font size for wider screens */
-    --typeset_-1: 1rem/1.5rem var(--font-body); /* Back to 16px/24px */
-  }
-}
-
-.navbar li.control a {
-  padding: 20px; /* Larger padding for a bigger touch target */
-}
-@media (min-width: 768px) {
-  .navbar li.control a {
-    padding: 14px 16px; /* Adjust padding back for desktop */
-  }
-}
-
-.container, .container1, .container2, .container3, .content-container, .content-container1 {
-  width: 100%; /* Use 100% width for smaller screens */
-  max-width: 700px; /* Adjust this value based on the specific container */
-  margin: 20px auto; /* Center the container */
-}
-
-.image-container img, .float-left img {
-  width: 100%; /* Make images responsive */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* ICON SECTION */
-
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px; /* Adjust the space between icons */
-}
-.icon-container1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px; /* Adjust the space between icons */
-  margin-left: 47px;
-}
-.tiny-icon {
-  width: 50px; /* Set the width to make the icons tiny */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease; /* Smooth scaling on hover */
-}
-.tiny-icon1 {
-  width: 61px; /* Set the width to make the icons tiny */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease; /* Smooth scaling on hover */
-}
-.tiny-icon2 {
-  width: 65px; /* Set the width to make the icons tiny */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease; /* Smooth scaling on hover */
-  margin-left: -7px;
-}
-.tiny-icon:hover {
-  transform: scale(1.2); /* Slightly enlarge icons on hover */
-}
-
-/* Project DIV */
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
-  gap: 10px; /* Space between grid items */
-  justify-content: center; /* Center grid horizontally */
-  align-items: start; /* Align items to the start of the grid cell */
-  padding: 10px; /* Padding around the grid */
-}
-.square-image {
-  width: 100%; /* Full width of the container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the area without distortion */
-}
-.image-item {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  text-align: center; /* Center text */
-}
-
-/* Larger Font Sizes for Specific IDs */
-.myname {
-  font-size: 2.5rem;
-}
-
-.Education, .Experience, .Skills, .Projects {
-  font-size: 4rem; /* Adjust the size as needed */
-}
-
-#Education, #Experience, #Skills {
-  text-align: left;
-  margin-right: 700px;
-  margin-top: 50px; /* Adjust the size as needed */
-  font-size: 20px;
-}
-
-/* Example for other IDs */
-#anotherSectionID {
-  font-size: 5rem; /* Adjust if needed */
-}
-
-/* Experince FILL UP SECTION alignment adjustments */
-.experience-container {
-  margin-left: 100px;
-}
-.p-exp {
-  margin-left: 100px;
-}
-.exp1-h2 {
-  margin-right: 284px;
-  position: relative;
-}
-.exp1-h3 {
-  margin-left: 60px;
-}
-.exp2-h2 {
-  margin-right: 193px;
-  position: relative;
-}
-.exp2-h3 {
-  margin-left: 65px;
-  position: relative;
-}
-.exp3-h2 {
-  margin-right: 153px;
-  position: relative;
-}
-.exp3-h3 {
-  margin-left: 65px;
-  position: relative;
-}
-.exp4-h2 {
-  margin-right: 153px;
-  position: relative;
-}
-.exp4-h3 {
-  margin-left: 65px;
-  position: relative;
-}
-
-/* SKILLS SECTION alignment adjustments */
-.content-container-skills {
-  margin-right: 155px;
-}
-/* Education SECTION alignment adjustments */
-.content-container-education {
-  margin-right: 50px;
-}
-.education-container {
-  margin-left: 350px;
-}
-
-.skills-container {
-  margin: 20px 0;
-  text-align: left; /* Center aligns the text within the container */
-  margin-left: 600px;
-}
-.skills-title {
-  font-size: 1.4rem; /* Enhanced font size for titles */
-  margin-bottom: 5px; /* Space between title and list */
-}
-.skills-list {
-  font-size: 1.2rem; /* Comfortable font size for the list */
-  margin-bottom: 15px; /* Space between different sections */
-}
-.others-title strong {
-  font-weight: bold; /* Ensure "Others" is bolded */
-}
-
-/* ABOUT PROFILE SECTION */
-.aboutmeh2 {
-  font-size: 40px;
-}
-.about-container {
-  max-width: 1200px; /* Maximum container width */
-  margin: auto; /* Center the container */
-  padding: 20px; /* Add some padding */
-  box-sizing: border-box; /* Include padding in width calculations */
-}
-#aboutme {
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center-align the items */
-  gap: 20px; /* Adds space between header and content */
-}
-.profile-container {
-  display: flex;
-  flex-direction: row; /* Side-by-side layout for image and text */
-  align-items: center; /* Align items vertically */
-  gap: 40px; /* Space between image and text */
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-}
-.profile-image img {
-  width: 100%; /* Responsive image width */
-  max-width: 200px; /* Maximum size of the image on mobile */
-  border-radius: 50%; /* Optional: makes the image round */
-}
-.profile-text p {
-  margin: 0;
-  text-align: justify; /* Justifies the text for better readability */
-  flex: 1; /* Allows text to fill the remaining space */
-  font-size: 1.3rem;
-}
-@media (max-width: 768px) {
-  .profile-container {
-    flex-direction: column; /* Stack image and text vertically on small screens */
-    align-items: center; /* Center-align the items on small screens */
-  }
-  .profile-image img {
-    max-width: 150px; /* Smaller image size on mobile */
-  }
-  .profile-text {
-    width: 100%; /* Full width text container on small screens */
-  }
-}
-@media (min-width: 769px) {
-  .profile-image img {
-    max-width: 300px; /* Larger image size on desktop */
-  }
-  .profile-text {
-    max-width: 60%; /* Limit text width on desktop for better readability */
-  }
-}
-
-#preview {
-  max-width: 800px; /* Adjust based on your layout */
-  margin: 20px auto; /* Center the section on the page */
-  padding: 20px;
-  background-color: #f9f9f9; /* Light background for the section */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 10px; /* Rounded corners */
-}
-#preview h2 {
-  text-align: center; /* Center the section title */
-  margin-bottom: 30px; /* Spacing below the title */
-  font-size: 50px;
-}
-.subtitle {
-  margin-bottom: 20px; /* Spacing between subtitles */
-}
-.subtitle h3 {
-  margin-bottom: 10px; /* Spacing below subtitle headings */
-  color: #333; /* Dark color for contrast */
-  font-size: 20px;
-}
-.subtitle p {
-  text-align: justify; /* Justify the paragraph text for clean alignment */
-  line-height: 1.6; /* Improve readability */
-}
-.subtitle a {
-  display: block; /* Ensure the anchor tag takes up full width for centering */
-  text-align: center; /* Center the content of the anchor tag */
-  margin: 20px 0; /* Spacing around the anchor tag */
-}
-.project-preview {
-  max-width: 100%; /* Ensure the image is responsive and fits its container */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Optional: Rounded corners for the image */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for the image */
-}
-#preview .subtitle .sub-img {
-  display: flex; /* Use flexbox to center the image */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically, if needed */
-  width: 100%; /* Take the full width of its parent to center properly */
-}
-.project-preview {
-  max-width: 100%; /* Ensure the image is responsive and does not overflow its container */
-  height: auto; /* Maintain the aspect ratio of the image */
-  display: block; /* Override the initial 'display: none;' when the image should be shown */
+p {
+  margin-bottom: 15px;
 }
 
 /* Footer */
 footer {
   text-align: center;
+  margin: 20px 0;
+}
+
+/* ==================================================================
+   ABOUT SECTION
+================================================================== */
+/* ID if needed for the about section */
+#aboutme {
+  text-align: left; /* left-align the content on large screens */
+}
+
+/* The main container (2 columns on large screens) */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;         /* allow wrapping on small screens */
+  gap: 40px;               /* space between left and right columns */
+  align-items: flex-start; /* align at the top */
+  justify-content: flex-start;
+}
+
+/* Left column: heading, photo, icons */
+.left-column {
+  text-align: center;      /* center these items in the left column */
+}
+
+/* Heading styling */
+.aboutmeh2 {
+  font-size: 3rem;         /* large heading on desktop */
+  margin-bottom: 20px;     /* slight spacing below heading */
+}
+
+/* Circular profile image */
+.profile-image img {
+  width: 350px;            /* large image on desktop */
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;     /* spacing below image before icons */
+}
+
+/* Icon container in a row */
+.icon-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Social icons (circular) */
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.icon-circle:hover {
+  transform: scale(1.1);
+}
+
+/* Right column: paragraph text */
+.profile-text {
+  flex: 1;                 /* fills remaining space */
+  max-width: 700px;        /* optional comfortable reading width */
+  text-align: justify;
+  font-size: 1rem;         /* base font size for paragraph */
+  margin-top: 120px;        /* mild top spacing so it aligns better with the heading on desktop */
+  margin-left: 0;          /* remove large left margin, let flex handle spacing */
+}
+.profile-text p {
+  font-size: 1.1rem;       /* slightly bigger for readability */
+}
+
+/* ==================================================================
+   EDUCATION SECTION
+================================================================== */
+.Education {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.education-container {
+  text-align: center;
+}
+
+.education-container ul li {
+  font-size: 1.1rem;
+}
+
+.grad-para {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* ==================================================================
+   EXPERIENCE SECTION
+================================================================== */
+.Experience {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.experience-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.experience-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.p-exp {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.experience-item ul {
+  margin-left: 20px;
+  padding-left: 10px; /* optional indentation */
+}
+
+.experience-item ul li {
+  margin-bottom: 8px;
+}
+
+/* ==================================================================
+   SKILLS SECTION
+================================================================== */
+/* Title “Skills ⚙️” */
+
+.Skills {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skills-container {
+  max-width: 800px;
+  margin: 10 auto;        /* center container */
+  text-align: left;
+  padding: 0 20px;       /* slight horizontal padding, remove if not needed */
+}
+
+.skills-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
   margin-top: 20px;
 }
 
-/* ================================================================
-   MOBILE OVERRIDES (to ensure mobile-friendliness without ruining
-   the original desktop design)
-================================================================ */
+.skills-list {
+  margin-bottom: 15px;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* ==================================================================
+   PROJECTS SECTION
+================================================================== */
+.Projects {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.nav-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.category-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.category-nav li {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f8f8f8;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.category-nav li:hover {
+  background-color: #e6e6e6;
+}
+
+.category-nav li.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.detail-section {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+.hidden {
+  display: none;
+}
+
+/* A container for the project list */
+.project-list {
+  margin-top: 10px;      /* spacing above the list */
+  padding-left: 0;       /* remove default bullet padding if desired */
+  list-style: none;      /* remove bullets */
+}
+
+/* Style the anchor tags to look like buttons */
+.project-list li {
+  margin-bottom: 8px;    /* spacing between each button link */
+}
+
+.project-btn {
+  display: inline-block; /* so we can add padding */
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #333;
+  text-decoration: none; /* remove underlines */
+  transition: background-color 0.2s, color 0.2s;
+  font-weight: 500;      /* optional: a bit bolder text */
+}
+
+/* Hover effect for button links */
+.project-btn:hover {
+  background-color: #e6e6e6;
+  color: #222;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and text */
+}
+
+.project-item img {
+  width: 150px;
+  height: auto;
+}
+
+.project-item span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+
+/* ==================================================================
+   RESPONSIVE MEDIA QUERIES
+================================================================== */
 @media (max-width: 768px) {
-  /* Reduce excessive margins on smaller screens */
-  .experience-container,
-  .p-exp,
-  .skills-container,
-  .education-container,
-  .content-container-skills,
-  .content-container-education {
-    margin: 0 !important;
-    padding: 0 10px; /* Some horizontal breathing room */
-  }
 
-  /* Reset heading margins to avoid pushing text off-screen */
-  .exp1-h2, .exp2-h2, .exp3-h2, .exp4-h2 {
-    margin-right: 0 !important;
-  }
-  .exp1-h3, .exp2-h3, .exp3-h3, .exp4-h3 {
-    margin-left: 0 !important;
-  }
-
-  /* Adjust the #Education, #Experience, #Skills headings */
-  #Education, #Experience, #Skills {
-    margin-right: 0;
-    margin-top: 20px;
-    text-align: center; /* Or keep left if preferred */
-  }
-
-  /* Resize .myname and large headings for mobile */
-  .myname {
-    font-size: 1.8rem;
-  }
+  /* Section headings smaller on mobile */
+  .aboutmeh2,
   .Education, .Experience, .Skills, .Projects {
-    font-size: 2.5rem; /* Scaled-down for smaller screens */
+    font-size: 2rem;
+  }
+
+  /* Stack columns vertically in About section */
+  .profile-container {
+    flex-direction: column;
+    align-items: center;         /* center them */
+    text-align: center;          /* optional: center text on mobile */
+  }
+
+  /* Reduce the large image size for mobile */
+  .profile-image img {
+    width: 200px;
+    height: 200px;
+    margin-top: 0;              /* remove large top margin on mobile */
+  }
+
+  /* Smaller icons on mobile */
+  .icon-circle {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Let text span full width on mobile, 
+     remove top margin if you want it to snug up under the image. */
+  .profile-text {
+    max-width: 90%;
+    margin: 20px auto 0 auto;   /* small top margin, auto left/right to center */
     text-align: center;
   }
 
-  /* Make containers fully responsive */
-  .container,
-  .container1,
-  .container2,
-  .container3,
-  .content-container,
-  .content-container1 {
-    margin: 10px auto;
-    padding: 10px;
-    width: 100%;
-  }
-
-  /* If you want to remove float on mobile so text doesn't wrap awkwardly */
-  .image-container,
-  .float-left {
-    float: none;
-    margin-right: 0;
-    margin-top: 10px;
-  }
-
-  /* Adjust #projects font size again if needed */
-  #projects {
-    font-size: 14px;
+  /* Tweak experience spacing on mobile */
+  .experience-list {
+    gap: 20px;
   }
 }
